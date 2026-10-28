@@ -90,7 +90,7 @@ faille, voir [SECURITY.md](SECURITY.md).
 ## Développement
 
 ```sh
-git clone https://github.com/KKanisvaran/Ai-reactions.git && cd Ai-reactions
+git clone https://github.com/KKanisvaran/icecrew.git && cd icecrew
 npm ci
 npm test               # build + tests
 npm run ai -- codex    # lance depuis les sources (PowerShell : npm.cmd run ai -- codex)
