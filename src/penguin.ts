@@ -1,4 +1,4 @@
-// The penguin, the ai-reactions mascot: © KKanisvaran, all rights reserved (excluded from the MIT license, see LICENSE).
+// The penguin, the icecrew mascot: © KKanisvaran, all rights reserved (excluded from the MIT license, see LICENSE).
 // Generated from the KK LAB penguin sheets, pixel for pixel: 12 poses on a 21 × 20 canvas, feet aligned,
 // then 16 from the second sheet, centered on the same belly; wider poses (raised flippers, a cape) overflow evenly.
 // The third sheet draws a longer penguin (21 rows): its 16 poses kept lost their most redundant rows down to the

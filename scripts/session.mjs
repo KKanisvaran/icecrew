@@ -9,15 +9,15 @@ import { ensureSpawnHelper } from './pty-helper.mjs';
 const args = process.argv.slice(2);
 if (args[0] === '--') args.shift();
 if (args[0] === '--help') {
-  console.log('Usage : ai-reactions codex [arguments] (ou claude, gemini)\n'
+  console.log('Usage : icecrew codex [arguments] (ou claude, gemini)\n'
     + 'Un pingouin vit dans un bandeau sous l’IA et réagit tout seul à ce qu’elle fait,\n'
-    + 'sans jamais la recouvrir (AI_REACTIONS_AMBIENT=0 pour le retirer). Clique dessus : il te répond.');
+    + 'sans jamais la recouvrir (ICECREW_AMBIENT=0 pour le retirer). Clique dessus : il te répond.');
 } else if (!process.stdin.isTTY || !process.stdout.isTTY) {
-  console.error('Lancez ai-reactions codex directement dans un terminal interactif (sans capture ni pipeline).');
+  console.error('Lancez icecrew codex directement dans un terminal interactif (sans capture ni pipeline).');
   process.exitCode = 1;
 } else {
   // The KK LAB mascot draws itself at every launch.
-  if (process.env.AI_REACTIONS_INTRO !== '0') await playIntro(process.stdout, process.stdin);
+  if ((process.env.ICECREW_INTRO ?? process.env.AI_REACTIONS_INTRO) !== '0') await playIntro(process.stdout, process.stdin);
   await run(args.length ? args : ['codex']);
   // ConPTY can retain worker handles after onExit. The child has already
   // exited and the screen is restored; flush output before closing our host.

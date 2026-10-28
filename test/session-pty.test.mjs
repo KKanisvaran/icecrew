@@ -14,7 +14,7 @@ test('real PTY launcher: the penguin reacts on its own below the AI, input is fo
     process.execPath, fileURLToPath(new URL('./fixtures/session-ai.mjs', import.meta.url)),
   ], {
     windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'],
-    env: { ...process.env, AI_REACTIONS_INTRO: '0' },
+    env: { ...process.env, ICECREW_INTRO: '0' },
   });
   // Only the cells that change are sent, so a caption may arrive in pieces:
   // the output is replayed on a screen and the band is read from it, as a user sees it.

@@ -1,5 +1,5 @@
 {
-  "name": "ai-reactions",
+  "name": "icecrew",
   "version": "1.0.0",
   "description": "Un pingouin compagnon en pixel art qui vit sous ton IA en terminal (Codex, Claude Code, Gemini CLI) et réagit tout seul.",
   "engines": {
@@ -24,7 +24,8 @@
     "gemini",
     "reactions",
     "pixel-art",
-    "companion"
+    "companion",
+    "penguin"
   ],
   "author": "KKanisvaran (KK LAB)",
   "license": "SEE LICENSE IN LICENSE",
@@ -38,7 +39,7 @@
     "node-pty": "1.1.0"
   },
   "bin": {
-    "ai-reactions": "bin/ai-reactions.mjs"
+    "icecrew": "bin/icecrew.mjs"
   },
   "files": [
     "bin/",

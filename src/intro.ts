@@ -132,7 +132,7 @@ export function introImage(seconds: number, cols: number, rows: number, graphics
 
 /** Plain text for captured output: no cursor control, no colors. */
 export function introText(): string {
-  return ['KK LAB · ai-reactions', NOTE_TEXT].join('\n');
+  return ['KK LAB · icecrew', NOTE_TEXT].join('\n');
 }
 
 /** The KK LAB mascot appears, with its note below, then closes on its own; a key skips it. */

@@ -1,11 +1,11 @@
-# ai-reactions · KK LAB
+# icecrew · KK LAB
 
 **Ton compagnon de code.** Coder avec une IA, c’est souvent passer des heures
-face à un terminal froid et à des lignes de code qui défilent. ai-reactions y
+face à un terminal froid et à des lignes de code qui défilent. icecrew y
 installe un petit pingouin en pixel art, là pour te tenir compagnie et te
 divertir.
 
-Lance Codex, Claude Code ou Gemini CLI avec `ai-reactions` : le pingouin
+Lance Codex, Claude Code ou Gemini CLI avec `icecrew` : le pingouin
 s’installe sur sa banquise, en bas du terminal, sous un ciel étoilé. Il vit au
 rythme de l’IA : il bosse avec elle, prend un café sur les longues tâches, fête
 la fin, se cache les yeux quand tu l’interromps. Entre deux tâches, il te
@@ -43,31 +43,33 @@ Prérequis : **[Node.js](https://nodejs.org) 24 ou plus récent** et une IA en
 ligne de commande (Codex, Claude Code ou Gemini CLI). Puis, dans un terminal :
 
 ```sh
-npm install -g ai-reactions
-ai-reactions codex     # lance Codex avec le pingouin (ou : ai-reactions claude / gemini)
+npm install -g icecrew
+icecrew codex     # lance Codex avec le pingouin (ou : icecrew claude / gemini)
 ```
 
 C’est tout : rien à configurer, rien à télécharger d’autre. Pour l’essayer sans
-rien installer durablement : `npx ai-reactions codex`.
+rien installer durablement : `npx icecrew codex`.
 
 | Système | Installation |
 | --- | --- |
-| Windows 10 1809+ / 11 | `npm install -g ai-reactions` |
-| macOS | `npm install -g ai-reactions` |
-| Linux | `npm install -g --allow-scripts=node-pty ai-reactions`, avec `python3`, `make` et `g++` : le terminal virtuel s’y compile |
+| Windows 10 1809+ / 11 | `npm install -g icecrew` |
+| macOS | `npm install -g icecrew` |
+| Linux | `npm install -g --allow-scripts=node-pty icecrew`, avec `python3`, `make` et `g++` : le terminal virtuel s’y compile |
 
 Sous Windows et macOS, npm peut prévenir que `node-pty` a des scripts
 d’installation non autorisés : c’est sans conséquence, ses binaires sont déjà
-fournis. Sous Windows, si PowerShell refuse de lancer `npm` ou `ai-reactions`
-(scripts désactivés sur le système), tape `npm.cmd` et `ai-reactions.cmd`.
+fournis. Sous Windows, si PowerShell refuse de lancer `npm` ou `icecrew`
+(scripts désactivés sur le système), tape `npm.cmd` et `icecrew.cmd`.
 
 Depuis les sources : `git clone` du dépôt, `npm ci`, puis `npm run ai -- codex`
 (sous Windows PowerShell : `npm.cmd run ai -- codex`). Le `--` transmet `codex`
 au lanceur plutôt qu’à npm.
 
-Désinstallation : `npm uninstall -g ai-reactions`.
+Désinstallation : `npm uninstall -g icecrew`.
 
-Tu avais une ancienne version, avec ses mots-clés ? Retire le serveur MCP
+icecrew s’appelait avant ai-reactions. Tu avais cette version ? Retire-la avec
+`npm uninstall -g ai-reactions` ; tes réglages `AI_REACTIONS_*` restent
+reconnus. Si elle avait encore ses mots-clés, retire aussi le serveur MCP
 qu’elle avait enregistré dans tes IA : `codex mcp remove ai-reactions`,
 `claude mcp remove ai-reactions` ou `gemini mcp remove ai-reactions`.
 
@@ -168,7 +170,7 @@ maintiens Maj en glissant.
 
 Le lancement commence par l’intro KK LAB : le tigre se dessine, puis son message
 s’écrit phrase après phrase, au rythme de la lecture. Une touche passe l’intro
-(`AI_REACTIONS_INTRO=0` la supprime, `ai-reactions intro` la rejoue). Puis le
+(`ICECREW_INTRO=0` la supprime, `icecrew intro` la rejoue). Puis le
 pingouin se dessine à son tour dans le bandeau, contour d’abord.
 
 ## Comment ce projet est né
@@ -210,7 +212,7 @@ raconter de vraies histoires, avec ses amis.
   l’IA (Codex, Claude Code, Gemini CLI)
    │  tourne dans un pseudo-terminal du lanceur
    ▼
-  lanceur ai-reactions
+  lanceur icecrew
    │  garde une copie de l’écran de l’IA, en mémoire,
    │  et y lit quelques indices (« esc to interrupt », permission,
    │  interruption, erreur) ─────────────► humeur du pingouin
@@ -254,16 +256,16 @@ raconter de vraies histoires, avec ses amis.
 
 | Commande | Rôle |
 | --- | --- |
-| `ai-reactions codex [args]` | Lance Codex avec le pingouin, aussi `claude` et `gemini` |
-| `ai-reactions intro` | Rejoue l’intro KK LAB |
-| `ai-reactions --version` | Affiche la version |
+| `icecrew codex [args]` | Lance Codex avec le pingouin, aussi `claude` et `gemini` |
+| `icecrew intro` | Rejoue l’intro KK LAB |
+| `icecrew --version` | Affiche la version |
 
 ## Réglages
 
 | Variable | Défaut | Effet |
 | --- | --- | --- |
-| `AI_REACTIONS_INTRO` | `1` | `0` désactive l’intro du lancement |
-| `AI_REACTIONS_AMBIENT` | `1` | `0` retire le pingouin sous l’IA |
+| `ICECREW_INTRO` | `1` | `0` désactive l’intro du lancement |
+| `ICECREW_AMBIENT` | `1` | `0` retire le pingouin sous l’IA |
 
 Le bandeau fait toujours 10 lignes : comme une image sur une page web, le
 pingouin garde sa taille et seul le décor suit la largeur du terminal (le
@@ -279,7 +281,7 @@ dessous, l’IA garde tout l’écran. L’intro s’adapte au terminal, à part
 - Le bandeau lit le bas de l’écran de l’IA, en mémoire, pour y repérer quelques
   indices génériques (« esc to interrupt », une demande de permission, une
   erreur d’API). Il n’en garde que des oui/non : jamais le texte, ni ton code, ni
-  tes questions. `AI_REACTIONS_AMBIENT=0` le coupe.
+  tes questions. `ICECREW_AMBIENT=0` le coupe.
 - Aucune touche n’est simulée et aucun processus n’est interrompu.
 
 Pour signaler une faille, voir [SECURITY.md](SECURITY.md).

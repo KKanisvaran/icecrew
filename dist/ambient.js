@@ -58,9 +58,10 @@ export function readSignals(screen, fresh) {
     };
 }
 export function ambientEnabled(env = process.env) {
-    const value = env.AI_REACTIONS_AMBIENT ?? '1';
+    // AI_REACTIONS_AMBIENT is the name from before icecrew; it still works.
+    const value = env.ICECREW_AMBIENT ?? env.AI_REACTIONS_AMBIENT ?? '1';
     if (value !== '0' && value !== '1')
-        throw new Error('AI_REACTIONS_AMBIENT : 0 ou 1 attendu.');
+        throw new Error('ICECREW_AMBIENT : 0 ou 1 attendu.');
     return value === '1';
 }
 /** Rows reserved for the band, or 0 when the terminal is too small to spare them. */
