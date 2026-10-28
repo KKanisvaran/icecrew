@@ -33,13 +33,13 @@ jobs:
         run: |
           npm pack --pack-destination "$RUNNER_TEMP"
           scripts=$([ "$RUNNER_OS" = Linux ] && echo --allow-scripts=node-pty || true)
-          npm install -g $scripts "$RUNNER_TEMP"/ai-reactions-*.tgz
-          ai-reactions --version
-          ai-reactions --help
+          npm install -g $scripts "$RUNNER_TEMP"/icecrew-*.tgz
+          icecrew --version
+          icecrew --help
       - name: Its terminal works once installed
         shell: bash
         run: |
-          cd "$(npm root -g)/ai-reactions"
+          cd "$(npm root -g)/icecrew"
           node --input-type=module -e "
             import pty from 'node-pty';
             import { ensureSpawnHelper } from './scripts/pty-helper.mjs';

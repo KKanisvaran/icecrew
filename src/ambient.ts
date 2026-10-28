@@ -109,8 +109,8 @@ export function readSignals(screen: string, fresh: boolean): Omit<Signals, 'type
 }
 
 export function ambientEnabled(env: NodeJS.ProcessEnv = process.env): boolean {
-  const value = env.AI_REACTIONS_AMBIENT ?? '1';
-  if (value !== '0' && value !== '1') throw new Error('AI_REACTIONS_AMBIENT : 0 ou 1 attendu.');
+  const value = env.ICECREW_AMBIENT ?? '1';
+  if (value !== '0' && value !== '1') throw new Error('ICECREW_AMBIENT : 0 ou 1 attendu.');
   return value === '1';
 }
 
