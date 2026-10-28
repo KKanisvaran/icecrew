@@ -1,6 +1,6 @@
 {
   "name": "icecrew",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Un pingouin compagnon en pixel art qui vit sous ton IA en terminal (Codex, Claude Code, Gemini CLI) et réagit tout seul.",
   "engines": {
     "node": ">=24"

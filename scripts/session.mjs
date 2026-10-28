@@ -17,7 +17,7 @@ if (args[0] === '--help') {
   process.exitCode = 1;
 } else {
   // The KK LAB mascot draws itself at every launch.
-  if ((process.env.ICECREW_INTRO ?? process.env.AI_REACTIONS_INTRO) !== '0') await playIntro(process.stdout, process.stdin);
+  if (process.env.ICECREW_INTRO !== '0') await playIntro(process.stdout, process.stdin);
   await run(args.length ? args : ['codex']);
   // ConPTY can retain worker handles after onExit. The child has already
   // exited and the screen is restored; flush output before closing our host.

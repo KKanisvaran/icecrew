@@ -26,7 +26,6 @@ test('screen markers of Codex, Claude Code and Gemini CLI are recognized', () =>
   assert.deepEqual(readSignals('> salut', true), { busy: false, asking: false, interrupted: false, failed: false });
   assert.equal(ambientEnabled({}), true);
   assert.equal(ambientEnabled({ ICECREW_AMBIENT: '0' }), false);
-  assert.equal(ambientEnabled({ AI_REACTIONS_AMBIENT: '0' }), false, 'the name from before icecrew still works');
   assert.throws(() => ambientEnabled({ ICECREW_AMBIENT: 'yes' }));
   assert.equal(BAND_ROWS, 10, 'the penguin at its true size, never shrunk');
   assert.equal(bandRows(80, 40), BAND_ROWS);

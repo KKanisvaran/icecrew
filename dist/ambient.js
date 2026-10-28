@@ -58,8 +58,7 @@ export function readSignals(screen, fresh) {
     };
 }
 export function ambientEnabled(env = process.env) {
-    // AI_REACTIONS_AMBIENT is the name from before icecrew; it still works.
-    const value = env.ICECREW_AMBIENT ?? env.AI_REACTIONS_AMBIENT ?? '1';
+    const value = env.ICECREW_AMBIENT ?? '1';
     if (value !== '0' && value !== '1')
         throw new Error('ICECREW_AMBIENT : 0 ou 1 attendu.');
     return value === '1';
